@@ -1,85 +1,33 @@
-# GreenSpot - Smart Location Sustainability Analyzer
+# Sust 
 
-## Project Overview
+# Sust
 
-GreenSpot is a comprehensive web application that leverages Google's Photorealistic 3D Maps to analyze and visualize location sustainability. By integrating multiple Google Maps Platform APIs, it provides real-time environmental metrics and quality-of-life insights.
+Sust is an app that analyzes environmental data such as air quality, solar data, walkability in areas, and greenspot regions using Google 3D maps.
 
-## Core Features
+## Features
 
-### 1. Air Quality Layer
-- **Visualization**: Creates gradient circles around location with opacity based on AQI
-- **Data Source**: Google Air Quality API
-- **Scoring (20 points max)**:
-  - AQI >= 80: 16-20 points
-  - AQI >= 60: 12-16 points
-  - AQI >= 40: 8-12 points
-  - AQI >= 20: 4-8 points
-  - AQI >= 1: 0.2-4 points
-- **Panel Features**: Real-time AQI, health recommendations, dominant pollutants
+- Air Quality Analysis: Sust provides real-time air quality data for different locations, allowing users to monitor and compare air quality levels.
+- Solar Data Analysis: Sust utilizes solar data to provide insights on solar energy potential in different areas, helping users make informed decisions about solar installations.
+- Walkability Analysis: Sust evaluates the walkability of neighborhoods and provides information on pedestrian-friendly routes and amenities.
+- Greenspot Regions: Sust identifies and highlights green areas and parks in different regions, promoting the importance of green spaces for a sustainable environment.
 
-### 2. Solar Potential Layer
-- **Visualization**: 3D polygons representing rooftop solar potential
-- **Data Source**: Google Solar API
-- **Scoring (40 points max)**:
-  - Based on average sunshine (kWh/m²/year)
-  - Score = min(averageSunshine / 50, 40)
-- **Panel Features**: Annual power output, panel configurations, roof segment analysis
-- **Known Issue**:  Misalignment of 3D solar panel elements with building geometry
+## Installation
 
-### 3. Walkability Layer
-- **Visualization**: 15-minute isochrone with color-coded amenity markers
-- **Data Source**: Google Places API
-- **Scoring (30 points max)**:
-  - Amenity count: Up to 15 points (2 points per amenity)
-  - Type diversity: Up to 10 points (2 points per type)
-  - Proximity: Up to 5 points (inverse of average distance)
-- **Panel Features**: Amenity categorization, distance calculations
-- **Known Issue**: Places API sometimes returns incorrect location types
+1. Clone the repository: `git clone https://github.com/your-username/sust.git`
+2. Install dependencies: `npm install`
+3. Start the app: `npm start`
 
-### 4. Green Spaces Layer
-- **Visualization**: 3D models with volumetric canopy representation
-- **Data Source**: Google Places API (parks)
-- **Scoring (30 points max)**:
-  - Quantity: Up to 10 points
-  - Proximity: Up to 10 points
-  - Quality (size, ratings): Up to 10 points
-- **Panel Features**: Park details, ratings, size calculations
+## Usage
 
-### 5. Transit Layer
-- **Visualization**: Station markers with connection lines
-- **Data Source**: Google Places API (transit stations)
-- **Scoring (30 points max)**:
-  - Based on station count, type diversity, and proximity
-  - 3 points per station
-  - 5 points per transit type
-  - Distance points (10 - average_distance * 2)
+1. Open the Sust app in your browser.
+2. Select a location or enter the coordinates of the area you want to analyze.
+3. Choose the type of analysis you want to perform (air quality, solar data, walkability, or greenspot regions).
+4. View the results on the Google 3D map and explore the detailed analysis for the selected area.
 
-## Sustainability Score Calculation
-- Total possible score: 100 points
-- Grade assignments:
-  - A+: 90-100
-  - A: 80-89
-  - B+: 70-79
-  - B: 60-69
-  - C+: 50-59
-  - C: 40-49
-  - D: 30-39
-  - F: Below 30
+## Contributing
 
-## AI Analysis Integration
-- Uses Gemini API for insights generation
-- Processes all layer data to generate:
-  - Key sustainability strengths
-  - Improvement opportunities
-  - Overall assessment
-- Uses structured prompting for consistent analysis
+Contributions are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
 
-## Technical Challenges & Solutions
+## License
 
-
-## Future Improvements
-1. Enhanced solar panel visualization accuracy
-2. Expanded amenity type validation
-3. Additional sustainability metrics integration
-4. Performance optimization for large areas
-5. Historical data trends analysis
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
